@@ -1,0 +1,1774 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>หน่วยกู้ภัยเพชรเกษม นครศรีธรรมราช</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700&family=Prompt:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #C0211A;
+    --red-light: #F5E6E5;
+    --red-dark: #C0211A;
+    --yellow: #C0211A;
+    --yellow-light: #FFF8ED;
+    --blue: #080471;
+    --blue-light: #E8EDFB;
+    --blue-dark: #C0211A;
+    --white: #FFFFFF;
+    --gray-50: #F8F9FA;
+    --gray-100: #F1F3F5;
+    --gray-200: #E9ECEF;
+    --gray-400: #868E96;
+    --gray-600: #495057;
+    --gray-800: #212529;
+    --font-th: 'Sarabun', sans-serif;
+    --font-display: 'Prompt', sans-serif;
+    --radius: 12px;
+    --radius-sm: 8px;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+    --shadow-md: 0 4px 16px rgba(0,0,0,0.1);
+    --shadow-lg: 0 8px 32px rgba(0,0,0,0.12);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: var(--font-th);
+    background: var(--white);
+    color: var(--gray-800);
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ========== EMERGENCY BANNER ========== */
+  .emergency-banner {
+    background: var(--red);
+    color: white;
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .emergency-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .hotline-block {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.6rem 0;
+  }
+
+  .hotline-icon {
+    width: 36px;
+    height: 36px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(255,255,255,0.4); }
+    50% { box-shadow: 0 0 0 8px rgba(255,255,255,0); }
+  }
+
+  .hotline-icon svg { width: 18px; height: 18px; fill: var(--red); }
+
+  .hotline-label {
+    font-family: var(--font-display);
+    font-size: 11px;
+    font-weight: 500;
+    opacity: 0.85;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .hotline-number {
+    font-family: var(--font-display);
+    font-size: clamp(1.3rem, 4vw, 1.8rem);
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    line-height: 1;
+  }
+
+  .hotline-sub {
+    font-size: 11px;
+    opacity: 0.8;
+    margin-top: 1px;
+  }
+
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 0;
+  }
+
+  .lang-btn {
+    background: transparent;
+    border: 1.5px solid rgba(255,255,255,0.5);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-family: var(--font-th);
+    cursor: pointer;
+    transition: all 0.2s;
+    font-weight: 500;
+  }
+
+  .lang-btn.active {
+    background: white;
+    color: var(--red);
+    border-color: white;
+  }
+
+  .lang-btn:hover:not(.active) {
+    background: rgba(255,255,255,0.15);
+  }
+
+  /* ========== SECONDARY NAV ========== */
+  .main-nav {
+    background: white;
+    border-bottom: 2px solid var(--yellow);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .logo-block {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 0;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .logo-emblem {
+    width: 44px;
+    height: 44px;
+    background: var(--blue);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .logo-emblem svg { width: 26px; height: 26px; fill: white; }
+
+  .logo-text { display: flex; flex-direction: column; }
+  .logo-name {
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--blue);
+    line-height: 1.1;
+  }
+  .logo-name-en {
+    font-size: 11px;
+    color: var(--gray-400);
+    font-weight: 400;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 0;
+    list-style: none;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 1rem 1rem;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--gray-600);
+    text-decoration: none;
+    transition: color 0.2s;
+    border-bottom: 3px solid transparent;
+    white-space: nowrap;
+  }
+
+  .nav-links a:hover { color: var(--blue); border-bottom-color: var(--blue); }
+
+  .nav-donate-btn {
+    background: var(--yellow);
+    color: var(--yellow-dark);
+    font-weight: 700;
+    border-radius: var(--radius-sm);
+    margin: 0.5rem 0 0.5rem 0.5rem;
+    border-bottom: none !important;
+    padding: 0.5rem 1.2rem !important;
+  }
+
+  .nav-donate-btn:hover {
+    background: var(--yellow-dark) !important;
+    color: white !important;
+    border-bottom: none !important;
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+  }
+  .hamburger span { display: block; width: 24px; height: 2px; background: var(--gray-600); border-radius: 2px; transition: 0.3s; }
+
+  /* ========== HERO ========== */
+  .hero {
+    background: var(--blue);
+    position: relative;
+    overflow: hidden;
+    padding: 3rem 1rem 4rem;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 280px; height: 280px;
+    border-radius: 50%;
+    background: rgba(245,166,35,0.12);
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: -40px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: rgba(192,33,26,0.15);
+  }
+
+  .hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(245,166,35,0.2);
+    border: 1px solid rgba(245,166,35,0.5);
+    color: var(--yellow);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+    letter-spacing: 0.05em;
+  }
+
+  .hero-badge::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--yellow);
+    animation: blink 1.2s infinite;
+  }
+
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    font-weight: 800;
+    color: white;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  .hero h1 span { color: var(--yellow); }
+
+  .hero-desc {
+    font-size: 16px;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 2rem;
+    line-height: 1.7;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--red);
+    color: white;
+    padding: 0.8rem 1.8rem;
+    border-radius: var(--radius-sm);
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: var(--font-th);
+  }
+
+  .btn-primary:hover { background: var(--red-dark); transform: translateY(-1px); box-shadow: var(--shadow-md); }
+
+  .btn-outline {
+    background: transparent;
+    color: white;
+    padding: 0.8rem 1.8rem;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border: 1.5px solid rgba(255,255,255,0.4);
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: var(--font-th);
+  }
+
+  .btn-outline:hover { background: rgba(255,255,255,0.1); border-color: white; }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(255,255,255,0.1);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-top: 2rem;
+  }
+
+  .stat-item {
+    padding: 1rem;
+    background: rgba(255,255,255,0.05);
+    text-align: center;
+  }
+
+  .stat-num {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--yellow);
+    line-height: 1;
+  }
+
+  .stat-label { font-size: 12px; color: rgba(255,255,255,0.65); margin-top: 4px; }
+
+  .hero-visual {
+    position: relative;
+  }
+
+  .hero-card-stack {
+    position: relative;
+    height: 320px;
+  }
+
+  .mission-card {
+    position: absolute;
+    background: white;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .mission-card.card-main {
+    width: 100%;
+    max-width: 340px;
+    right: 0;
+    top: 0;
+  }
+
+  .mission-card.card-secondary {
+    width: 180px;
+    left: 0;
+    bottom: 0;
+    border: 2px solid var(--yellow);
+  }
+
+  .card-img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    display: block;
+    background: linear-gradient(135deg, #1A3A8F 0%, #C0211A 100%);
+  }
+
+  .card-img-placeholder {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: linear-gradient(135deg, #1A3A8F 0%, #C0211A 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+  }
+
+  .card-body { padding: 0.75rem 1rem; }
+  .card-tag {
+    display: inline-block;
+    background: var(--red-light);
+    color: var(--red);
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 4px;
+    letter-spacing: 0.04em;
+  }
+
+  .card-title { font-size: 13px; font-weight: 600; color: var(--gray-800); line-height: 1.3; }
+
+  /* ========== SECTION BASE ========== */
+  section { padding: 4rem 1rem; }
+  .section-inner { max-width: 1200px; margin: 0 auto; }
+
+  .section-header { margin-bottom: 2.5rem; }
+  .section-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.5rem;
+  }
+
+  .tag-red { color: var(--red); }
+  .tag-blue { color: var(--blue); }
+  .tag-yellow { color: var(--yellow-dark); }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 700;
+    color: var(--gray-800);
+    line-height: 1.2;
+  }
+
+  .section-desc {
+    font-size: 15px;
+    color: var(--gray-400);
+    margin-top: 0.5rem;
+    max-width: 600px;
+  }
+
+  /* ========== NEWS/ACTIVITIES ========== */
+  .activities { background: var(--gray-50); }
+
+  .activities-filters {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    border: 1.5px solid var(--gray-200);
+    background: white;
+    color: var(--gray-600);
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: var(--font-th);
+  }
+
+  .filter-btn.active {
+    background: var(--blue);
+    color: white;
+    border-color: var(--blue);
+  }
+
+  .filter-btn:hover:not(.active) { border-color: var(--blue); color: var(--blue); }
+
+  .activities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .activity-card {
+    background: white;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--gray-200);
+    transition: all 0.25s;
+    cursor: pointer;
+  }
+
+  .activity-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--blue);
+  }
+
+  .activity-card:hover .card-overlay { opacity: 1; }
+
+  .act-img-wrap {
+    position: relative;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+  }
+
+  .act-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s;
+  }
+
+  .activity-card:hover .act-img { transform: scale(1.05); }
+
+  .act-img-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+  }
+
+  .ph-rescue { background: linear-gradient(135deg, #1A3A8F 0%, #2a5bd4 100%); }
+  .ph-fire { background: linear-gradient(135deg, #C0211A 0%, #e85c55 100%); }
+  .ph-flood { background: linear-gradient(135deg, #0d5c8e 0%, #2196F3 100%); }
+  .ph-medical { background: linear-gradient(135deg, #1a6b3a 0%, #4CAF50 100%); }
+  .ph-relief { background: linear-gradient(135deg, #F5A623 0%, #ff8c00 100%); }
+  .ph-training { background: linear-gradient(135deg, #5c1a8e 0%, #9C27B0 100%); }
+
+  .card-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(26,58,143,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.25s;
+  }
+
+  .overlay-btn {
+    background: white;
+    color: var(--blue);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  .act-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+
+  .badge-rescue { background: var(--blue); color: white; }
+  .badge-fire { background: var(--red); color: white; }
+  .badge-flood { background: #0d5c8e; color: white; }
+  .badge-medical { background: #1a6b3a; color: white; }
+  .badge-relief { background: var(--yellow-dark); color: white; }
+  .badge-training { background: #5c1a8e; color: white; }
+
+  .act-body { padding: 1rem; }
+  .act-date { font-size: 12px; color: var(--gray-400); margin-bottom: 0.35rem; }
+  .act-title { font-size: 15px; font-weight: 600; color: var(--gray-800); line-height: 1.35; margin-bottom: 0.5rem; }
+  .act-desc { font-size: 13px; color: var(--gray-400); line-height: 1.5; }
+
+  .act-footer {
+    padding: 0.75rem 1rem;
+    border-top: 1px solid var(--gray-100);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .act-location { font-size: 12px; color: var(--gray-400); display: flex; align-items: center; gap: 4px; }
+  .act-arrow { color: var(--blue); font-size: 16px; font-weight: 700; }
+
+  .load-more-wrap { text-align: center; margin-top: 2rem; }
+
+  .btn-load-more {
+    background: white;
+    border: 2px solid var(--blue);
+    color: var(--blue);
+    padding: 0.75rem 2rem;
+    border-radius: var(--radius-sm);
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: var(--font-th);
+  }
+
+  .btn-load-more:hover { background: var(--blue); color: white; }
+
+  /* ========== DONATION SECTION ========== */
+  .donation {
+    background: white;
+  }
+
+  .donation-inner {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .donation-info h2 { margin-bottom: 1rem; }
+
+  .trust-badges {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--gray-600);
+  }
+
+  .trust-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .ti-green { background: #E8F5E9; }
+  .ti-blue { background: var(--blue-light); }
+  .ti-yellow { background: var(--yellow-light); }
+
+  .trust-icon svg { width: 16px; height: 16px; }
+
+  .donation-form-card {
+    background: white;
+    border: 1.5px solid var(--gray-200);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+  }
+
+  .form-header {
+    background: var(--blue);
+    padding: 1.25rem 1.5rem;
+    color: white;
+  }
+
+  .form-header h3 {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+
+  .form-header p { font-size: 13px; opacity: 0.8; margin-top: 2px; }
+
+  .form-body { padding: 1.5rem; }
+
+  .amount-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .amount-btn {
+    padding: 0.6rem;
+    border: 1.5px solid var(--gray-200);
+    border-radius: var(--radius-sm);
+    background: white;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--gray-600);
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+    font-family: var(--font-th);
+  }
+
+  .amount-btn:hover { border-color: var(--blue); color: var(--blue); background: var(--blue-light); }
+  .amount-btn.selected { background: var(--blue); color: white; border-color: var(--blue); }
+
+  .custom-amount { margin-bottom: 1.25rem; }
+
+  .custom-amount label { display: block; font-size: 13px; font-weight: 600; color: var(--gray-600); margin-bottom: 6px; }
+
+  .input-wrap {
+    position: relative;
+  }
+
+  .input-prefix {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: var(--gray-400);
+    font-weight: 600;
+  }
+
+  .custom-amount input {
+    width: 100%;
+    padding: 0.65rem 1rem 0.65rem 2.5rem;
+    border: 1.5px solid var(--gray-200);
+    border-radius: var(--radius-sm);
+    font-size: 15px;
+    font-family: var(--font-th);
+    color: var(--gray-800);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .custom-amount input:focus { border-color: var(--blue); }
+
+  .bank-transfer-section {
+    background: var(--gray-50);
+    border-radius: var(--radius-sm);
+    padding: 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .bank-section-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--gray-600);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .bank-accounts { display: flex; flex-direction: column; gap: 0.5rem; }
+
+  .bank-account {
+    background: white;
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-sm);
+    padding: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .bank-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 800;
+    flex-shrink: 0;
+  }
+
+  .bank-kbank { background: #138F2D; color: white; }
+  .bank-scb { background: #4E0A84; color: white; }
+  .bank-bbl { background: #1B3D8F; color: white; }
+
+  .bank-details { flex: 1; }
+  .bank-name { font-size: 13px; font-weight: 600; color: var(--gray-800); }
+  .bank-acc { font-size: 12px; color: var(--gray-400); margin-top: 1px; font-family: monospace; }
+
+  .copy-btn {
+    background: var(--blue-light);
+    color: var(--blue);
+    border: none;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: var(--font-th);
+    white-space: nowrap;
+  }
+
+  .copy-btn:hover { background: var(--blue); color: white; }
+
+  .transfer-steps {
+    margin-bottom: 1.25rem;
+  }
+
+  .steps-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--gray-600);
+    margin-bottom: 0.75rem;
+  }
+
+  .step-list { display: flex; flex-direction: column; gap: 0.5rem; }
+
+  .step-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--gray-600);
+    line-height: 1.5;
+  }
+
+  .step-num {
+    width: 22px;
+    height: 22px;
+    background: var(--blue);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .confirm-btn {
+    width: 100%;
+    background: var(--red);
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.2s;
+    font-family: var(--font-th);
+  }
+
+  .confirm-btn:hover { background: var(--red-dark); transform: translateY(-1px); box-shadow: var(--shadow-md); }
+
+  .security-note {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    color: var(--gray-400);
+    margin-top: 0.75rem;
+    justify-content: center;
+  }
+
+  .security-note svg { width: 12px; height: 12px; fill: var(--gray-400); }
+
+  /* ========== QR SECTION ========== */
+  .qr-section {
+    background: var(--blue-light);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .qr-placeholder {
+    width: 100px;
+    height: 100px;
+    background: white;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--gray-200);
+  }
+
+  .qr-placeholder svg { width: 70px; height: 70px; }
+
+  .qr-info h4 {
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--blue);
+    margin-bottom: 4px;
+  }
+
+  .qr-info p { font-size: 13px; color: var(--gray-600); line-height: 1.5; }
+
+  /* ========== ABOUT STRIP ========== */
+  .about-strip {
+    background: var(--yellow);
+    padding: 2.5rem 1rem;
+  }
+
+  .about-strip-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .about-strip-text h2 {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--yellow-dark);
+  }
+
+  .about-strip-text p { font-size: 14px; color: var(--yellow-dark); opacity: 0.8; margin-top: 4px; }
+
+  .btn-join {
+    background: white;
+    color: var(--yellow-dark);
+    padding: 0.75rem 1.8rem;
+    border-radius: var(--radius-sm);
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+    transition: all 0.2s;
+  }
+
+  .btn-join:hover { background: var(--yellow-dark); color: white; }
+
+  /* ========== FOOTER ========== */
+  footer {
+    background: var(--blue-dark);
+    color: rgba(255,255,255,0.7);
+    padding: 3rem 1rem 1.5rem;
+  }
+
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-brand .logo-emblem { background: rgba(255,255,255,0.1); margin-bottom: 0.75rem; }
+  .footer-brand .logo-name { color: white; }
+  .footer-brand p { font-size: 13px; line-height: 1.6; margin-top: 0.5rem; }
+
+  .footer-col h4 {
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+  .footer-col a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 13px; transition: color 0.2s; }
+  .footer-col a:hover { color: var(--yellow); }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .footer-cert {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .cert-badge {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    color: rgba(255,255,255,0.6);
+  }
+
+  /* ========== MOBILE NAV DRAWER ========== */
+  .mobile-drawer {
+    display: none;
+    flex-direction: column;
+    background: white;
+    border-top: 1px solid var(--gray-200);
+    padding: 0.5rem 0;
+  }
+
+  .mobile-drawer.open { display: flex; }
+  .mobile-drawer a { padding: 0.75rem 1.5rem; font-size: 15px; color: var(--gray-700); text-decoration: none; font-weight: 500; border-left: 3px solid transparent; transition: all 0.2s; }
+  .mobile-drawer a:hover { color: var(--blue); border-left-color: var(--blue); background: var(--blue-light); }
+  .mobile-drawer .mobile-donate { background: var(--yellow-light); color: var(--yellow-dark); font-weight: 700; }
+
+  /* ========== RESPONSIVE ========== */
+  @media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-visual { display: none; }
+    .donation-inner { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr 1fr; }
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+  }
+
+  @media (max-width: 600px) {
+    section { padding: 2.5rem 1rem; }
+    .hero { padding: 2rem 1rem 2.5rem; }
+    .footer-top { grid-template-columns: 1fr; }
+    .hero-stats { margin-top: 1.5rem; }
+    .stat-num { font-size: 1.4rem; }
+    .amount-grid { grid-template-columns: repeat(3, 1fr); }
+    .about-strip-inner { flex-direction: column; text-align: center; }
+    .emergency-inner { justify-content: center; }
+    .nav-right { gap: 0.4rem; }
+  }
+
+  /* ========== SCROLL ANIMATIONS ========== */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  /* Toast notification */
+  .toast {
+    position: fixed;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: var(--blue);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    font-weight: 600;
+    z-index: 9999;
+    transition: transform 0.3s ease;
+    white-space: nowrap;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .toast.show { transform: translateX(-50%) translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- EMERGENCY BANNER -->
+<div class="emergency-banner">
+  <div class="emergency-inner">
+    <div class="hotline-block">
+      <div class="hotline-icon">
+        <svg viewBox="0 0 24 24" xmlns="https://phetkasemfoundation.or.th/projects-en-th/1470/">
+          <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+        </svg>
+      </div>
+      <div>
+        <div class="hotline-label" id="text-hotline-label">มูลนิธิเพชรเกษมนครศรีธรรมราช-สิชล</div>
+        <div class="hotline-number">โทร.098-3913915</div>
+        <div class="hotline-sub" id="text-hotline-sub">🚨โทรเร็ว ถึงเร็ว🚨</div>
+      </div>
+    </div>
+    <div class="nav-right">
+      <button class="lang-btn active" onclick="setLang('th')" id="btn-th">ไทย</button>
+      <button class="lang-btn" onclick="setLang('en')" id="btn-en">EN</button>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN NAV -->
+<nav class="main-nav">
+  <div class="nav-inner">
+    <a href="#" class="logo-block">
+      <div class="logo-emblem">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/>
+          <path d="M12 2L2 7l2 2 8-4.5L20 9l2-2z"/>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <span class="logo-name" id="logo-name">หน่วยกู้ภัยเพชรเกษม นครศรีธรรมราช</span>
+        <span class="logo-name-en">Phetkasem Sichon Rescue</span>
+      </div>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about" id="nav-about">เกี่ยวกับเรา</a></li>
+      <li><a href="#activities" id="nav-activities">กิจกรรม</a></li>
+      <li><a href="#donate" id="nav-donate">บริจาค</a></li>
+      <li><a href="#contact" id="nav-contact">ติดต่อ</a></li>
+      <li><a href="#donate" class="nav-donate-btn" id="nav-donate-btn">❤ บริจาคเดี๋ยวนี้</a></li>
+    </ul>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="เมนู">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-drawer" id="mobile-drawer">
+    <a href="#about" id="mob-about">เกี่ยวกับเรา</a>
+    <a href="#activities" id="mob-activities">กิจกรรม</a>
+    <a href="#donate" id="mob-donate">บริจาค</a>
+    <a href="#contact" id="mob-contact">ติดต่อเรา</a>
+    <a href="#donate" class="mobile-donate" id="mob-donate-btn">❤ บริจาคเดี๋ยวนี้</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="about">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge" id="hero-badge">ปฏิบัติการตลอด 24 ชั่วโมง</div>
+      <h1 id="hero-h1">พร้อมช่วยเหลือ<br><span id="hero-span">ทุกชีวิต</span> ทุกเมื่อ</h1>
+      <p class="hero-desc" id="hero-desc">มูลนิธิกู้ภัยไทยพร้อมปฏิบัติงานด้วยใจและความเชี่ยวชาญ เพื่อปกป้องและช่วยเหลือชีวิตของประชาชนในทุกสถานการณ์ฉุกเฉิน</p>
+      <div class="hero-cta">
+        <a href="tel:1784" class="btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          <span id="hero-btn1">โทร 1784</span>
+        </a>
+        
+    <div class="hero-visual">
+      <div class="hero-card-stack">
+        <div class="mission-card card-main">
+          <div class="card-img-placeholder" style="background:linear-gradient(135deg,#1A3A8F,#C0211A);height:180px;display:flex;align-items:center;justify-content:center;">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="rgba(255,255,255,0.3)">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <span class="card-tag">ภารกิจล่าสุด</span>
+            <div class="card-title">ช่วยเหลือผู้ประสบอุทกภัย จ.เชียงราย 45 ราย</div>
+          </div>
+        </div>
+        <div class="mission-card card-secondary">
+          <div class="card-img-placeholder" style="background:linear-gradient(135deg,#F5A623,#C0211A);height:90px;display:flex;align-items:center;justify-content:center;font-size:2rem;">🚑</div>
+          <div class="card-body" style="padding:0.5rem 0.75rem">
+            <div class="card-title" style="font-size:11px">ฉุกเฉิน 24 ชม.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACTIVITIES / NEWS -->
+<section class="activities" id="activities">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-tag tag-red">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+        <span id="activities-tag">ข่าวและกิจกรรม</span>
+      </div>
+      
+    </div>
+
+    <div class="activities-filters reveal">
+      <button class="filter-btn active" id="filter-all" onclick="filterCards(this,'all')">ทั้งหมด</button>
+  
+    </div>
+
+    <div class="activities-grid" id="activities-grid">
+
+      <div class="activity-card reveal reveal-delay-1" data-cat="flood">
+        <div class="act-img-wrap">
+          <div class="act-img-placeholder ph-flood">🚤</div>
+          <div class="card-overlay"><span class="overlay-btn">อ่านต่อ</span></div>
+        </div>
+        <div class="act-body">
+          <div class="act-date">5 พ.ค. 2568</div>
+          <div class="act-title">ช่วยเหลือผู้ประสบน้ำท่วม จ.เชียงราย 45 ราย ปลอดภัยทุกคน</div>
+          <div class="act-desc">ทีมอาสาสมัคร 30 นาย ใช้เรือยาง 8 ลำ ช่วยเหลือผู้ประสบภัยออกจากพื้นที่น้ำท่วมสูง</div>
+        </div>
+        <div class="act-footer">
+          <span class="act-location">📍 เชียงราย</span>
+          <span class="act-arrow">→</span>
+        </div>
+      </div>
+
+      <div class="activity-card reveal reveal-delay-2" data-cat="fire">
+        <div class="act-img-wrap">
+          <div class="act-img-placeholder ph-fire">🚒</div>
+          <span class="act-badge badge-fire">ดับเพลิง</span>
+          <div class="card-overlay"><span class="overlay-btn">อ่านต่อ</span></div>
+        </div>
+        <div class="act-body">
+          <div class="act-date">3 พ.ค. 2568</div>
+          <div class="act-title">ระงับเหตุเพลิงไหม้โกดังสินค้า ย่านมีนบุรี กทม.</div>
+          <div class="act-desc">ใช้กำลัง 5 รถดับเพลิง ควบคุมเพลิงได้ใน 2 ชั่วโมง ไม่มีผู้บาดเจ็บ</div>
+        </div>
+        <div class="act-footer">
+          <span class="act-location">📍 กรุงเทพมหานคร</span>
+          <span class="act-arrow">→</span>
+        </div>
+      </div>
+
+      <div class="activity-card reveal reveal-delay-3" data-cat="rescue">
+        <div class="act-img-wrap">
+          <div class="act-img-placeholder ph-rescue">🚁</div>
+          <span class="act-badge badge-rescue">กู้ภัย</span>
+          <div class="card-overlay"><span class="overlay-btn">อ่านต่อ</span></div>
+        </div>
+        <div class="act-body">
+          <div class="act-date">1 พ.ค. 2568</div>
+          <div class="act-title">ค้นหาและช่วยนักท่องเที่ยวหลงป่า ดอยอินทนนท์ จ.เชียงใหม่</div>
+          <div class="act-desc">ปฏิบัติการค้นหา 18 ชั่วโมง พบผู้สูญหาย 3 รายในสภาพปลอดภัยดี</div>
+        </div>
+        <div class="act-footer">
+          <span class="act-location">📍 เชียงใหม่</span>
+          <span class="act-arrow">→</span>
+        </div>
+      </div>
+
+      <div class="activity-card reveal reveal-delay-1" data-cat="medical">
+        <div class="act-img-wrap">
+          <div class="act-img-placeholder ph-medical">🏥</div>
+          <span class="act-badge badge-medical">การแพทย์</span>
+          <div class="card-overlay"><span class="overlay-btn">อ่านต่อ</span></div>
+        </div>
+        <div class="act-body">
+          <div class="act-date">28 เม.ย. 2568</div>
+          <div class="act-title">หน่วยแพทย์เคลื่อนที่ออกให้บริการชุมชนชายแดน จ.ตาก</div>
+          <div class="act-desc">ให้บริการตรวจรักษาและแจกยาฟรี แก่ผู้ด้อยโอกาส 320 ราย</div>
+        </div>
+        <div class="act-footer">
+          <span class="act-location">📍 ตาก</span>
+          <span class="act-arrow">→</span>
+        </div>
+      </div>
+
+      <div class="activity-card reveal reveal-delay-2" data-cat="rescue">
+        <div class="act-img-wrap">
+          <div class="act-img-placeholder ph-relief">🎁</div>
+          <span class="act-badge badge-relief">บรรเทาทุกข์</span>
+          <div class="card-overlay"><span class="overlay-btn">อ่านต่อ</span></div>
+        </div>
+        <div class="act-body">
+          <div class="act-date">25 เม.ย. 2568</div>
+          <div class="act-title">แจกถุงยังชีพให้ผู้ประสบภัยแล้ง อีสานตอนกลาง 1,200 ครัวเรือน</div>
+          <div class="act-desc">ร่วมกับภาคเอกชนและอาสาสมัครจิตอาสา แจกจ่ายสิ่งของจำเป็นครบถ้วน</div>
+        </div>
+        <div class="act-footer">
+          <span class="act-location">📍 ขอนแก่น</span>
+          <span class="act-arrow">→</span>
+        </div>
+      </div>
+
+      <div class="activity-card reveal reveal-delay-3" data-cat="rescue">
+        <div class="act-img-wrap">
+          <div class="act-img-placeholder ph-training">📚</div>
+          <span class="act-badge badge-training">ฝึกอบรม</span>
+          <div class="card-overlay"><span class="overlay-btn">อ่านต่อ</span></div>
+        </div>
+        <div class="act-body">
+          <div class="act-date">20 เม.ย. 2568</div>
+          <div class="act-title">อบรม CPR และการปฐมพยาบาลเบื้องต้นสำหรับนักเรียน กทม. 500 คน</div>
+          <div class="act-desc">โครงการ "ลูกเสือกู้ภัย" เพื่อสร้างทักษะการช่วยชีวิตให้เยาวชน</div>
+        </div>
+        <div class="act-footer">
+          <span class="act-location">📍 กรุงเทพมหานคร</span>
+          <span class="act-arrow">→</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="load-more-wrap reveal">
+      <button class="btn-load-more" id="load-more-btn">โหลดเพิ่มเติม</button>
+    </div>
+  </div>
+</section>
+
+<!-- DONATION -->
+<section class="donation" id="donate">
+  <div class="section-inner">
+    <div class="section-header reveal" style="text-align:center; max-width:600px; margin:0 auto 3rem;">
+      <div class="section-tag tag-blue" style="justify-content:center;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z"/></svg>
+        <span id="donate-tag">ร่วมบริจาค</span>
+      </div>
+      <h2 class="section-title" id="donate-title">สนับสนุนภารกิจกู้ภัย</h2>
+      <p class="section-desc" style="margin:0.5rem auto 0;" id="donate-desc">การบริจาคของคุณทุกบาทจะถูกนำไปช่วยเหลือผู้ประสบภัยโดยตรง ด้วยความโปร่งใสและตรวจสอบได้</p>
+    </div>
+
+    <div class="donation-inner">
+      <!-- LEFT: Trust info -->
+      <div class="donation-info reveal">
+        <div class="section-tag tag-blue" style="margin-bottom:0.5rem;">
+          <span id="donate-left-tag">ทำไมต้องบริจาคกับเรา</span>
+        </div>
+        <h2 class="section-title" style="font-size:1.5rem;" id="donate-left-title">น่าเชื่อถือ โปร่งใส<br>ตรวจสอบได้ทุกบาท</h2>
+        <div class="trust-badges">
+          <div class="trust-item reveal reveal-delay-1">
+            <div class="trust-icon ti-green">
+              <svg viewBox="0 0 24 24" fill="#1a6b3a"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            </div>
+            <span id="trust1">จดทะเบียนถูกต้องตามกฎหมาย กรมการปกครอง</span>
+          </div>
+          <div class="trust-item reveal reveal-delay-2">
+            <div class="trust-icon ti-blue">
+              <svg viewBox="0 0 24 24" fill="#1A3A8F"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+            </div>
+            <span id="trust2">ได้รับการรับรองจากสำนักงานการตรวจเงินแผ่นดิน</span>
+          </div>
+          <div class="trust-item reveal reveal-delay-3">
+            <div class="trust-icon ti-yellow">
+              <svg viewBox="0 0 24 24" fill="#C47D0A"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg>
+            </div>
+            <span id="trust3">รายงานการเงินเผยแพร่สาธารณะทุกไตรมาส</span>
+          </div>
+          <div class="trust-item reveal reveal-delay-4">
+            <div class="trust-icon ti-green">
+              <svg viewBox="0 0 24 24" fill="#1a6b3a"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm4.24 16L12 15.45 7.77 18l1.12-4.81-3.73-3.23 4.92-.42L12 5l1.92 4.53 4.92.42-3.73 3.23L16.23 18z"/></svg>
+            </div>
+            <span id="trust4">ได้รับรางวัลมูลนิธิดีเด่นด้านความโปร่งใส ปี 2566</span>
+          </div>
+        </div>
+
+        <div class="qr-section reveal">
+          <div class="qr-placeholder">
+            <svg viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="1" y="1" width="7" height="7" rx="1" fill="#1A3A8F"/>
+              <rect x="2" y="2" width="5" height="5" fill="white"/>
+              <rect x="3" y="3" width="3" height="3" fill="#1A3A8F"/>
+              <rect x="13" y="1" width="7" height="7" rx="1" fill="#1A3A8F"/>
+              <rect x="14" y="2" width="5" height="5" fill="white"/>
+              <rect x="15" y="3" width="3" height="3" fill="#1A3A8F"/>
+              <rect x="1" y="13" width="7" height="7" rx="1" fill="#1A3A8F"/>
+              <rect x="2" y="14" width="5" height="5" fill="white"/>
+              <rect x="3" y="15" width="3" height="3" fill="#1A3A8F"/>
+              <rect x="10" y="10" width="2" height="2" fill="#1A3A8F"/>
+              <rect x="13" y="10" width="2" height="2" fill="#1A3A8F"/>
+              <rect x="16" y="10" width="2" height="2" fill="#1A3A8F"/>
+              <rect x="10" y="13" width="2" height="2" fill="#1A3A8F"/>
+              <rect x="13" y="13" width="2" height="2" fill="#1A3A8F"/>
+              <rect x="16" y="16" width="2" height="2" fill="#1A3A8F"/>
+              <rect x="10" y="16" width="2" height="2" fill="#1A3A8F"/>
+              <rect x="13" y="19" width="2" height="2" fill="#1A3A8F"/>
+              <rect x="19" y="13" width="2" height="2" fill="#1A3A8F"/>
+            </svg>
+          </div>
+          <div class="qr-info">
+            <h4 id="qr-title">สแกน QR Code บริจาค</h4>
+            <p id="qr-desc">สแกนผ่าน Mobile Banking ทุกธนาคาร หรือ PromptPay รองรับทุกแอปธนาคาร ได้ทันที ปลอดภัย 100%</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Donation form -->
+      <div class="reveal">
+        <div class="donation-form-card">
+          <div class="form-header">
+            <h3 id="form-title">เลือกจำนวนเงินที่ต้องการบริจาค</h3>
+            <p id="form-sub">ทุกบาทส่งตรงถึงผู้ประสบภัย ไม่หักค่าใช้จ่าย</p>
+          </div>
+          <div class="form-body">
+            <div class="amount-grid">
+              <button class="amount-btn" onclick="selectAmount(this,'100')">฿100</button>
+              <button class="amount-btn selected" onclick="selectAmount(this,'300')">฿300</button>
+              <button class="amount-btn" onclick="selectAmount(this,'500')">฿500</button>
+              <button class="amount-btn" onclick="selectAmount(this,'1000')">฿1,000</button>
+              <button class="amount-btn" onclick="selectAmount(this,'2000')">฿2,000</button>
+              <button class="amount-btn" onclick="selectAmount(this,'5000')">฿5,000</button>
+            </div>
+
+            <div class="custom-amount">
+              <label id="custom-label">หรือระบุจำนวนเงินเอง</label>
+              <div class="input-wrap">
+                <span class="input-prefix">฿</span>
+                <input type="number" id="custom-input" placeholder="300" min="20" value="300">
+              </div>
+            </div>
+
+            <div class="bank-transfer-section">
+              <div class="bank-section-title">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--blue)"><path d="M4 10v7h3v-7H4zm6 0v7h3v-7h-3zM2 22h19v-3H2v3zm14-12v7h3v-7h-3zM11.5 1L2 6v2h19V6l-9.5-5z"/></svg>
+                <span id="bank-title">โอนเงินผ่านธนาคาร</span>
+              </div>
+              <div class="bank-accounts">
+                <div class="bank-account">
+                  <div class="bank-logo bank-kbank">K</div>
+                  <div class="bank-details">
+                    <div class="bank-name">กสิกรไทย (KBank)</div>
+                    <div class="bank-acc">123-4-56789-0</div>
+                  </div>
+                  <button class="copy-btn" onclick="copyAccount('123-4-56789-0')">คัดลอก</button>
+                </div>
+                <div class="bank-account">
+                  <div class="bank-logo bank-scb">SCB</div>
+                  <div class="bank-details">
+                    <div class="bank-name">ไทยพาณิชย์ (SCB)</div>
+                    <div class="bank-acc">321-9-87654-3</div>
+                  </div>
+                  <button class="copy-btn" onclick="copyAccount('321-9-87654-3')">คัดลอก</button>
+                </div>
+                <div class="bank-account">
+                  <div class="bank-logo bank-bbl">BBL</div>
+                  <div class="bank-details">
+                    <div class="bank-name">กรุงเทพ (BBL)</div>
+                    <div class="bank-acc">456-7-89012-3</div>
+                  </div>
+                  <button class="copy-btn" onclick="copyAccount('456-7-89012-3')">คัดลอก</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="transfer-steps">
+              <div class="steps-title" id="steps-title">ขั้นตอนการแจ้งโอนเงิน</div>
+              <div class="step-list">
+                <div class="step-item">
+                  <span class="step-num">1</span>
+                  <span id="step1">โอนเงินผ่านธนาคารหรือ PromptPay ตามบัญชีด้านบน</span>
+                </div>
+                <div class="step-item">
+                  <span class="step-num">2</span>
+                  <span id="step2">ถ่ายภาพหลักฐานการโอนเงิน (Slip)</span>
+                </div>
+                <div class="step-item">
+                  <span class="step-num">3</span>
+                  <span id="step3">กดปุ่ม "แจ้งโอนเงิน" ด้านล่าง และแนบ Slip</span>
+                </div>
+                <div class="step-item">
+                  <span class="step-num">4</span>
+                  <span id="step4">รับใบอนุโมทนาบัตรทางอีเมล ภายใน 24 ชั่วโมง</span>
+                </div>
+              </div>
+            </div>
+
+            <button class="confirm-btn" onclick="confirmDonate()" id="confirm-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              แจ้งโอนเงิน / ส่ง Slip
+            </button>
+
+            <div class="security-note">
+              <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+              <span id="security-note">ปลอดภัย 100% · ข้อมูลเข้ารหัส SSL · ไม่เก็บข้อมูลบัตร</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT STRIP -->
+<div class="about-strip">
+  <div class="about-strip-inner">
+    <div class="about-strip-text">
+      <h2 id="strip-title">เป็นส่วนหนึ่งของทีมกู้ชีวิต</h2>
+      <p id="strip-desc">สมัครเป็นอาสาสมัครกู้ภัย เรารับทุกระดับทักษะ มีการฝึกอบรมให้</p>
+    </div>
+    <a href="#" class="btn-join" id="strip-btn">
+      สมัครอาสาสมัคร →
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo-emblem">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z" fill="white"/>
+          </svg>
+        </div>
+        <div class="logo-text" style="margin-top:8px;">
+          <span class="logo-name" id="footer-name">มูลนิธิกู้ภัยไทย</span>
+          <span class="logo-name-en">Thai Rescue Foundation</span>
+        </div>
+        <p id="footer-desc">ปฏิบัติงานด้วยใจ เพื่อปกป้องชีวิตประชาชนทุกคนในประเทศไทย ตลอด 24 ชั่วโมง 365 วัน</p>
+      </div>
+      <div class="footer-col">
+        <h4 id="fcol1-title">เกี่ยวกับเรา</h4>
+        <ul>
+          <li><a href="#" id="fc1-1">ประวัติมูลนิธิ</a></li>
+          <li><a href="#" id="fc1-2">คณะกรรมการ</a></li>
+          <li><a href="#" id="fc1-3">รายงานประจำปี</a></li>
+          <li><a href="#" id="fc1-4">รางวัลและการรับรอง</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 id="fcol2-title">บริการ</h4>
+        <ul>
+          <li><a href="#" id="fc2-1">กู้ภัยฉุกเฉิน</a></li>
+          <li><a href="#" id="fc2-2">ดับเพลิง</a></li>
+          <li><a href="#" id="fc2-3">บรรเทาสาธารณภัย</a></li>
+          <li><a href="#" id="fc2-4">ฝึกอบรม CPR</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 id="fcol3-title">ติดต่อเรา</h4>
+        <ul>
+          <li><a href="tel:1784">📞 1784 (สายด่วน)</a></li>
+          <li><a href="mailto:info@thairescue.or.th">✉ info@thairescue.or.th</a></li>
+          <li><a href="#">📍 123 ถ.พระราม 4 กรุงเทพฯ</a></li>
+          <li><a href="#">Facebook · LINE Official</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span id="footer-copy">© 2569 หน่วยกู้ภัยเพชรเกษม นครศรีธรรมราช · ทะเบียนมูลนิธิ กท 012/2540</span>
+      <div class="footer-cert">
+        <span class="cert-badge">SSL Secured</span>
+        <span class="cert-badge">ISO 9001</span>
+        <span class="cert-badge">กรมการปกครอง</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+// ===== LANGUAGE DATA =====
+const lang = {
+  th: {
+    'text-hotline-label': 'สายด่วนกู้ภัย 24 ชั่วโมง',
+    'text-hotline-sub': 'โทรฟรีตลอด 24 ชั่วโมง · Free 24/7',
+    'logo-name': 'มูลนิธิกู้ภัยไทย',
+    'nav-about': 'เกี่ยวกับเรา', 'nav-activities': 'กิจกรรม',
+    'nav-donate': 'บริจาค', 'nav-contact': 'ติดต่อ',
+    'nav-donate-btn': '❤ บริจาคเดี๋ยวนี้',
+    'mob-about': 'เกี่ยวกับเรา', 'mob-activities': 'กิจกรรม',
+    'mob-donate': 'บริจาค', 'mob-contact': 'ติดต่อเรา',
+    'mob-donate-btn': '❤ บริจาคเดี๋ยวนี้',
+    'hero-badge': 'ปฏิบัติการตลอด 24 ชั่วโมง',
+    'hero-h1': 'พร้อมช่วยเหลือ<br><span id="hero-span">ทุกชีวิต</span> ทุกเมื่อ',
+    'hero-desc': 'มูลนิธิกู้ภัยไทยพร้อมปฏิบัติงานด้วยใจและความเชี่ยวชาญ เพื่อปกป้องและช่วยเหลือชีวิตของประชาชนในทุกสถานการณ์ฉุกเฉิน',
+    'hero-btn1': 'โทร 1784', 'hero-btn2': '❤ ร่วมบริจาค',
+    'stat1': 'ภารกิจต่อปี', 'stat2': 'อาสาสมัคร', 'stat3': 'จังหวัด',
+    'activities-tag': 'ข่าวและกิจกรรม', 'activities-title': 'ภารกิจช่วยเหลือสังคม',
+    'activities-desc': 'ติดตามการปฏิบัติภารกิจและกิจกรรมเพื่อสังคมของทีมกู้ภัย',
+    'filter-all': 'ทั้งหมด', 'filter-rescue': 'กู้ภัย', 'filter-fire': 'ดับเพลิง',
+    'filter-flood': 'อุทกภัย', 'filter-medical': 'การแพทย์',
+    'load-more-btn': 'โหลดเพิ่มเติม',
+    'donate-tag': 'ร่วมบริจาค', 'donate-title': 'สนับสนุนภารกิจกู้ภัย',
+    'donate-desc': 'การบริจาคของคุณทุกบาทจะถูกนำไปช่วยเหลือผู้ประสบภัยโดยตรง ด้วยความโปร่งใสและตรวจสอบได้',
+    'donate-left-tag': 'ทำไมต้องบริจาคกับเรา',
+    'donate-left-title': 'น่าเชื่อถือ โปร่งใส<br>ตรวจสอบได้ทุกบาท',
+    'trust1': 'จดทะเบียนถูกต้องตามกฎหมาย กรมการปกครอง',
+    'trust2': 'ได้รับการรับรองจากสำนักงานการตรวจเงินแผ่นดิน',
+    'trust3': 'รายงานการเงินเผยแพร่สาธารณะทุกไตรมาส',
+    'trust4': 'ได้รับรางวัลมูลนิธิดีเด่นด้านความโปร่งใส ปี 2566',
+    'qr-title': 'สแกน QR Code บริจาค',
+    'qr-desc': 'สแกนผ่าน Mobile Banking ทุกธนาคาร หรือ PromptPay รองรับทุกแอปธนาคาร ได้ทันที ปลอดภัย 100%',
+    'form-title': 'เลือกจำนวนเงินที่ต้องการบริจาค',
+    'form-sub': 'ทุกบาทส่งตรงถึงผู้ประสบภัย ไม่หักค่าใช้จ่าย',
+    'custom-label': 'หรือระบุจำนวนเงินเอง',
+    'bank-title': 'โอนเงินผ่านธนาคาร',
+    'steps-title': 'ขั้นตอนการแจ้งโอนเงิน',
+    'step1': 'โอนเงินผ่านธนาคารหรือ PromptPay ตามบัญชีด้านบน',
+    'step2': 'ถ่ายภาพหลักฐานการโอนเงิน (Slip)',
+    'step3': 'กดปุ่ม "แจ้งโอนเงิน" ด้านล่าง และแนบ Slip',
+    'step4': 'รับใบอนุโมทนาบัตรทางอีเมล ภายใน 24 ชั่วโมง',
+    'confirm-btn': '📧 แจ้งโอนเงิน / ส่ง Slip',
+    'footer-name': 'มูลนิธิกู้ภัยไทย',
+    'footer-desc': 'ปฏิบัติงานด้วยใจ เพื่อปกป้องชีวิตประชาชนทุกคนในประเทศไทย ตลอด 24 ชั่วโมง 365 วัน',
+    'fcol1-title': 'เกี่ยวกับเรา', 'fcol2-title': 'บริการ', 'fcol3-title': 'ติดต่อเรา',
+    'footer-copy': '© 2569 มูลนิธิเพชรเกษม นครศรีธรรมราช · ทะเบียนมูลนิธิ กท 012/2540',
+  },
+  en: {
+    'text-hotline-label': 'Emergency Hotline 24/7',
+    'text-hotline-sub': 'Free calls 24 hours · บริการฟรีตลอดเวลา',
+    'logo-name': 'Phetkasem Sichon Foundation',
+    'nav-about': 'About Us', 'nav-activities': 'Activities',
+    'nav-donate': 'Donate', 'nav-contact': 'Contact',
+    'nav-donate-btn': '❤ Donate Now',
+    'mob-about': 'About Us', 'mob-activities': 'Activities',
+    'mob-donate': 'Donate', 'mob-contact': 'Contact',
+    'mob-donate-btn': '❤ Donate Now',
+    'hero-badge': 'Operating 24 Hours a Day',
+    'hero-h1': 'Ready to Save<br><span id="hero-span">Every Life</span>, Every Moment',
+    'hero-desc': 'Thai Rescue Foundation operates with dedication and expertise to protect and assist lives across Thailand in every emergency situation.',
+    'hero-btn1': 'Call 1784', 'hero-btn2': '❤ Donate Now',
+    'stat1': 'Missions/Year', 'stat2': 'Volunteers', 'stat3': 'Provinces',
+    'activities-tag': 'News & Updates', 'activities-title': 'Rescue & Community Missions',
+    'activities-desc': 'Follow our rescue operations and community service activities.',
+    'filter-all': 'All', 'filter-rescue': 'Rescue', 'filter-fire': 'Fire',
+    'filter-flood': 'Flood', 'filter-medical': 'Medical',
+    'load-more-btn': 'Load More',
+    'donate-tag': 'Make a Donation', 'donate-title': 'Support Rescue Missions',
+    'donate-desc': 'Every baht of your donation goes directly to disaster victims, with full transparency and accountability.',
+    'donate-left-tag': 'Why Donate With Us',
+    'donate-left-title': 'Trustworthy, Transparent<br>Every Baht Accountable',
+    'trust1': 'Legally registered with Department of Provincial Administration',
+    'trust2': 'Certified by the Office of the Auditor General of Thailand',
+    'trust3': 'Financial reports published publicly every quarter',
+    'trust4': 'Outstanding Foundation Award for Transparency, 2023',
+    'qr-title': 'Scan QR Code to Donate',
+    'qr-desc': 'Scan with any Mobile Banking app or PromptPay. Compatible with all Thai bank apps. Instant and 100% secure.',
+    'form-title': 'Choose Your Donation Amount',
+    'form-sub': 'Every baht goes directly to victims, no deductions.',
+    'custom-label': 'Or enter a custom amount',
+    'bank-title': 'Bank Transfer',
+    'steps-title': 'Transfer Notification Steps',
+    'step1': 'Transfer to the bank account or PromptPay listed above.',
+    'step2': 'Take a screenshot of your transfer confirmation (Slip).',
+    'step3': 'Click "Notify Transfer" below and attach your Slip.',
+    'step4': 'Receive your donation receipt via email within 24 hours.',
+    'confirm-btn': '📧 Notify Transfer / Send Slip',
+    'security-note': '100% Secure · SSL Encrypted · Card data never stored',
+    'strip-title': 'Join Our Life-Saving Team',
+    'strip-desc': 'Become a rescue volunteer. All skill levels welcome, full training provided.',
+    'strip-btn': 'Apply as Volunteer →',
+    'footer-name': 'Thai Rescue Foundation',
+    'footer-desc': 'Operating with heart to protect every life in Thailand, 24 hours a day, 365 days a year.',
+    'fcol1-title': 'About Us', 'fcol2-title': 'Services', 'fcol3-title': 'Contact',
+    'footer-copy': '© 2025 Thai Rescue Foundation · Registration No. BKK 012/1997',
+    'toast-copied': 'Account number copied!', 'toast-confirm': 'Opening donation notification form...'
+  }
+};
+
+let currentLang = 'th';
+
+function setLang(l) {
+  currentLang = l;
+  document.getElementById('btn-th').classList.toggle('active', l === 'th');
+  document.getElementById('btn-en').classList.toggle('active', l === 'en');
+  document.documentElement.lang = l;
+
+  const d = lang[l];
+  for (const [id, val] of Object.entries(d)) {
+    if (id.startsWith('toast')) continue;
+    const el = document.getElementById(id);
+    if (el) el.innerHTML = val;
+  }
+}
+
+// ===== MENU =====
+function toggleMenu() {
+  const d = document.getElementById('mobile-drawer');
+  d.classList.toggle('open');
+}
+
+document.querySelectorAll('.mobile-drawer a').forEach(a => {
+  a.addEventListener('click', () => {
+    document.getElementById('mobile-drawer').classList.remove('open');
+  });
+});
+
+// ===== AMOUNT SELECTION =====
+function selectAmount(btn, amount) {
+  document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  document.getElementById('custom-input').value = amount;
+}
+
+// ===== FILTER CARDS =====
+function filterCards(btn, cat) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.activity-card').forEach(card => {
+    if (cat === 'all' || card.dataset.cat === cat) {
+      card.style.display = '';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+
+// ===== COPY ACCOUNT =====
+function copyAccount(acc) {
+  navigator.clipboard.writeText(acc).catch(() => {});
+  showToast(lang[currentLang]['toast-copied']);
+}
+
+// ===== CONFIRM DONATE =====
+function confirmDonate() {
+  showToast(lang[currentLang]['toast-confirm']);
+  setTimeout(() => {
+    const amount = document.getElementById('custom-input').value || '300';
+    const subject = encodeURIComponent('แจ้งบริจาคมูลนิธิกู้ภัยไทย');
+    const body = encodeURIComponent('จำนวนเงิน: ฿' + amount + '\n\n(กรุณาแนบ Slip การโอนเงิน)');
+    window.open('mailto:donate@thairescue.or.th?subject=' + subject + '&body=' + body);
+  }, 600);
+}
+
+// ===== TOAST =====
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2800);
+}
+
+// ===== SCROLL REVEAL =====
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Init hero visible
+document.querySelector('.hero').querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+</script>
+</body>
+</html>
